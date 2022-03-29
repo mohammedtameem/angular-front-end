@@ -1,18 +1,18 @@
 <table class="table table-dark">
   <thead>
     <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Author</th>
-      <th scope="col">Name</th>
-      <th scope="col">price</th>
+      <th scope="col">Date</th>
+      <th scope="col">States</th>
+      <th scope="col">Positive</th>
+      <th scope="col">negative</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor= "let book of bookList">
-      <td>{{ book.id}}</td>
-      <td>{{ book.author}}</td>
-      <td>{{ book.name}}</td>
-      <td>{{ book.price}}</td>
+    <tr *ngFor= "let user of users">
+      <td>{{ user.date |   date: 'dd/MM/yyyy'}}</td>
+      <td>{{ user.states | currency: 'USD'}}</td>
+      <td>{{ user.positive }}</td>
+      <td>{{ user.negative}}</td>
 
     </tr>
   </tbody>

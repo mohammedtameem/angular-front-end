@@ -10,12 +10,14 @@ import { Booklist } from './booklist';
 export class BooklistComponent implements OnInit {
 
 
-  bookList:Booklist[] =[];
+  users:any;
   constructor(private service: BooklistService) { }
 
   ngOnInit(): void
   {
-    this.bookList =  this.service.getBookList();
+    let response =  this.service.getBookList();
+    response.subscribe((data) => this.users = data);
+
 
 
   }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Booklist } from '../booklist/booklist';
 
@@ -6,20 +7,12 @@ import { Booklist } from '../booklist/booklist';
 })
 export class BooklistService {
 
-
-  bookList:Booklist[] = [
-
-    new Booklist(1,"andrew","java programming",1000),
-    new Booklist(2,"john","angular",2000),
-    new Booklist(3,"mark","reactjs",3000)
-  ];
-
-  constructor() {
+  constructor(private http:HttpClient) {
 
    }
 
   getBookList()
   {
-    return this.bookList;
+    return this.http.get("https://api.covidtracking.com/v1/us/current.json");
   }
 }
